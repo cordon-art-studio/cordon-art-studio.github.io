@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="color-scheme" content="dark light">
+    <meta name="theme-color" content="#0b0e11">
+
+    <title>Cordón Art Studio — Enrique Yovany Cordón Suazo</title>
+    <meta name="description" content="Portafolio de Enrique Yovany Cordón Suazo, artista plástico hondureño. Muralismo, óleo y estilo naif inspirado en la flora y fauna de Honduras.">
+    <meta name="author" content="Enrique Yovany Cordón Suazo">
+
+    <!-- Open Graph / Social -->
+    <!-- NOTA: reemplazar por URL absoluta cuando el sitio tenga dominio -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Cordón Art Studio — Arte naif de Honduras">
+    <meta property="og:description" content="Muralismo, óleo y estilo naif. Recorriendo Honduras a través del color.">
+    <meta property="og:image" content="img/proceres.jpeg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" type="image/png" href="img/logo-1024.png">
+
+    <!-- Tipografía -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Aplicar tema guardado antes del primer render (evita parpadeo) -->
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('arte-tema') ||
+                    (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+                document.documentElement.setAttribute('data-theme', t);
+            } catch (e) { /* sin localStorage: se mantiene dark */ }
+        })();
+    </script>
+</head>
+<body>
+
+    <a class="skip-link" href="#galeria">Saltar a la galería</a>
+
+    <!-- Preloader (noscript lo oculta si JS está deshabilitado) -->
+    <div id="preloader-art">
+        <div class="preloader-content">
+            <img src="img/preloader.png" alt="Logo Cordón Art" id="img-preloader">
+            <div class="loader-track">
+                <div class="loader-fill"></div>
+            </div>
+            <p class="loader-text">CARGANDO MUNDO NAIF...</p>
+        </div>
+    </div>
+    <noscript><style>#preloader-art { display: none !important; }</style></noscript>
+
+    <button id="theme-toggle" type="button" aria-label="Cambiar tema claro/oscuro" title="Cambiar tema">
+        <i class="fas fa-moon" aria-hidden="true"></i>
+    </button>
+
+    <header>
+        <div class="header-content">
+            <div class="typing-container">
+                <span class="cursor-superior" aria-hidden="true"></span>
+                <h1 id="titulo-escrito" aria-label="Cordón Art Gallery"></h1>
+            </div>
+            <p class="header-sub">Recorriendo Honduras a través del color</p>
+            <div class="header-stats">
+                <span><i class="fas fa-paint-roller" aria-hidden="true"></i> MURALISMO</span>
+                <span class="separator" aria-hidden="true">•</span>
+                <span><i class="fas fa-palette" aria-hidden="true"></i> ÓLEO</span>
+                <span class="separator" aria-hidden="true">•</span>
+                <span><i class="fas fa-brush" aria-hidden="true"></i> ESTILO NAIF</span>
+            </div>
+        </div>
+    </header>
+
+    <section class="bio-section">
+        <div class="bio-container">
+            <div class="bio-text">
+                <span class="bio-badge">ARTISTA PLÁSTICO</span>
+                <h2>Enrique Yovany Cordón Suazo</h2>
+                <p class="bio-description">
+                    Gestor cultural y artista plástico con exposiciones a nivel nacional e internacional.
+                    Como parte del proyecto <strong>PICCCMAH de la SECAPPH</strong>, mi obra captura la esencia vital de la flora y fauna hondureña.
+                </p>
+                <div class="bio-footer">
+                    <span>La Paz, Honduras 🇭🇳</span>
+                    <div class="line" aria-hidden="true"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="shipping-banner">
+        <div class="shipping-content">
+            <i class="fas fa-earth-americas world-icon" aria-hidden="true"></i>
+            <div class="shipping-info">
+                <h3>¡Envíos sin fronteras!</h3>
+                <p>Arte Catracho a nivel Nacional e Internacional 📦✨</p>
+            </div>
+        </div>
+        <!-- Cinta marquee (decorativa) -->
+        <div class="marquee" aria-hidden="true">
+            <div class="marquee-track">
+                <span>Arte Catracho ✦ Envíos nacionales e internacionales ✦ Muralismo ✦ Óleo ✦ Estilo Naif ✦ Arte Catracho ✦ Envíos nacionales e internacionales ✦ Muralismo ✦ Óleo ✦ Estilo Naif ✦&nbsp;</span>
+                <span>Arte Catracho ✦ Envíos nacionales e internacionales ✦ Muralismo ✦ Óleo ✦ Estilo Naif ✦ Arte Catracho ✦ Envíos nacionales e internacionales ✦ Muralismo ✦ Óleo ✦ Estilo Naif ✦&nbsp;</span>
+            </div>
+        </div>
+    </div>
+
+    <main class="grid-container" id="galeria" aria-label="Galería de obras"></main>
+
+    <footer class="footer-custom">
+        <div class="footer-horizontal">
+            <div class="foot-item"><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:enriquecordon5@gmail.com">enriquecordon5@gmail.com</a></div>
+            <div class="foot-item"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> La Paz, Honduras</div>
+            <div class="foot-item"><i class="fas fa-paint-brush" aria-hidden="true"></i> Arte en lienzo y pared</div>
+        </div>
+        <hr class="footer-line">
+
+        <div class="footer-bottom-row">
+            <p class="copyright">&copy; 2026 Cordón Art. Todos los derechos reservados.</p>
+            <div class="dev-credits">Desarrollado con arte por <span>ArticDash-2 🚀</span></div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/50496468880" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+    </a>
+
+    <div id="modal-visor" class="modal" role="dialog" aria-modal="true" aria-label="Visor de obra a pantalla completa" inert>
+        <button class="cerrar-modal" type="button" aria-label="Cerrar visor">&times;</button>
+        <img class="modal-img" id="img-full" alt="">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
